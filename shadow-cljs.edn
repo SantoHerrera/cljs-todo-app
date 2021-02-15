@@ -1,0 +1,8 @@
+{:lein         true
+ :builds       {:app {:target     :browser
+                      :output-dir "resources/public/js"
+                      :asset-path "/js"
+                      :modules    {:app {:entries [cljs-todo-app.core]}}
+                      :devtools   {:after-load cljs-todo-app.core/mount-root}}}
+ :dev-http     {3000 {:root    "resources/public"
+                      :handler cljs-todo-app.handler/app}}}
